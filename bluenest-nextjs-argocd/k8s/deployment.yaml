@@ -1,0 +1,31 @@
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bluenest
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: bluenest
+  template:
+    metadata:
+      labels:
+        app: bluenest
+    spec:
+      containers:
+      - name: bluenest
+        image: ghcr.io/YOUR_GITHUB_USER/bluenest:latest
+        ports:
+        - containerPort: 3000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: bluenest
+spec:
+  selector:
+    app: bluenest
+  ports:
+  - port: 80
+    targetPort: 3000
