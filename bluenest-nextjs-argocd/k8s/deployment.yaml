@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: bluenest
-        image: ghcr.io/YOUR_GITHUB_USER/bluenest:latest
+        image: ghcr.io/allasriharsha/bluenest:latest
         ports:
         - containerPort: 3000
 ---
